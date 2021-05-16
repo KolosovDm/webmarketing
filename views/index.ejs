@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="<%=data.page_meta.meta_keywords%>" />
+    <meta name="description" content="<%=data.page_meta.meta_description%>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+   
+    <link rel="stylesheet" href="/css/style.css" />
+    <title><%=data.page_meta.title%></title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div id="wraper">
+        <header>
+          <div id="logo">
+            <p>Header/Logo</p>
+          </div>
+          <nav>
+            <%for(let i = 0; i < data.nav.length; i++){%>
+              <div class="navmenu"><a href="http://<%= data.nav[i].href%>""><%=data.nav[i].text%>
+                  </a>
+              </div>
+            <%}%>
+           
+
+          </nav>
+        </header>
+        <div id="breadcrumbs">
+          <%for(let i = 0; i < data.breadcrumbs.length; i++){%>
+            <div class="crumbs"><a href="http://<%= data.breadcrumbs[i].href%>""><%=data.breadcrumbs[i].text%> &#62
+                </a>
+            </div>
+          <%}%>
+        </div>
+        <h1><%=data.page_meta.h1%></h1>
+         <div id="content">
+         
+          <aside id="filter">
+            <div id="resultsearch">
+              <p>6 result found</p>
+            </div>
+            <hr>
+            <aside id="filtrbar">
+              <p>Param1</p>
+              <div id="check">
+                <div>
+                  <input type="checkbox" name="op1" id="op1" value="value1" />
+                  <label for="op1">value1</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="op2" id="op2" value="value2" />
+                  <label for="op2">value</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="op3"
+                    id="op3"
+                    value="value3"
+                    checked
+                  />
+                  <label for="op3">value3</label>
+                </div>
+                <div>
+                  <input
+                    type="checkbox"
+                    name="op4"
+                    id="op4"
+                    value="value4"
+                    checked
+                  />
+                  <label for="op4">value4</label>
+                </div>
+                <div>
+                  <input type="checkbox" name="op5" id="op5" value="value5" />
+                  <label for="op5">value5</label>
+                </div>
+              </div>
+              <p>Param2</p>
+
+              <div id="radio">
+                <div>
+                  <input
+                    type="radio"
+                    name="param"
+                    id="radioparam1"
+                    value="val2.1"
+                  />
+                  <label for="">val2.1</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="param"
+                    id="radioparam2"
+                    value="val2.2"
+                  />
+                  <label for="">val2.2</label>
+                </div>
+
+                <div>
+                  <input
+                    type="radio"
+                    name="param"
+                    id="radioparam3"
+                    value="val2.3"
+                  />
+                  <label for="">val2.3</label>
+                </div>
+              </div>
+
+              <p>Param3</p>
+              <div id="maxmin">
+                <input type="text" name="min" id="min" placeholder="min" />
+                <input type="text" name="max" id="max" placeholder="max" />
+              </div>
+              <p>Param4</p>
+              <div id="keywordsubmit">
+                <input type="search" placeholder="keyword" id="keyword" />
+                <input type="submit" name="search" id="search" value="Search" />
+              </div>
+            </aside>
+          </aside>
+          <section id="main">
+              <div id="listing">
+              <%for(let i = 0; i < data.stock.length; i++){%>
+              <div class="product">
+                <div class="img">
+                  <img
+                    src="../img/<%=data.stock[i].image%>"
+                    alt="<%=data.stock[i].title%>"
+                  />
+                </div>
+                <div class="info">
+                  <div class="discriptionPrice">
+                    <div class="titlediscription">
+                      <a href="#"
+                        ><p class="title"><%=data.stock[i].title%></p></a
+                      >
+                      <div class="discription">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Iste voluptate voluptatibus numquam facere quis
+                        eveniet.
+                      </div>
+                    </div>
+                    <div class="pricing">
+                      <div class="price"><%=data.stock[i].price%></div>
+                      <div class="price_currency">
+                        <%=data.stock[i].price_currency%>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modelinfo">
+                    <div class="make"><%=data.stock[i].make%></div>
+                    <div class="model"><%=data.stock[i].model%></div>
+                    <div class="year"><%=data.stock[i].year%></div>
+                    <div class="milmes">
+                      <div class="mileage"><%=data.stock[i].mileage%></div>
+                      <div class="mileage_measure">
+                        <%=data.stock[i].mileage_measure%>
+                      </div>
+                    </div>
+
+                    <div class="axle_configuration">
+                      <%=data.stock[i].axle_configuration%>
+                    </div>
+                    <div class="powmis">
+                      <div class="power"><%=data.stock[i].power%></div>
+                      <div class="power_measure">
+                        <%=data.stock[i].power_measure%>
+                      </div>
+                    </div>
+
+                    <div class="payload"><%=data.stock[i].payload%></div>
+                    <div class="gross_weight">
+                      <%=data.stock[i].gross_weight%>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <%}%>
+              <div id="foodiscript">
+                <%for(let i= 0; i < data.page_text.length; i++){%>
+                  <<%=data.page_text[i].tag%>>
+                  <%=data.page_text[i].content%>
+                  </<%=data.page_text[i].tag%>>
+                <%}%>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section id="footer">
+         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe molestiae ad accusantium totam quod non quo fugiat aspernatur at rem commodi dolorum ullam cum beatae assumenda atque, qui expedita rerum dolorem cumque iste omnis fugit deleniti. Voluptates, veniam veritatis labore consequuntur culpa maxime aperiam quia, ipsa, eaque excepturi exercitationem dicta accusamus. Vero dicta ab exercitationem rerum quasi veniam error molestias dolorem. Nisi at ratione, suscipit aspernatur culpa animi inventore tempore accusantium nulla minima. Minima unde similique quis atque ut provident architecto explicabo sed voluptas quisquam quo nulla, vel deleniti optio ea recusandae aliquam id dicta, tempore doloremque enim ipsum hic!</p>
+            
+        </section>
+        <section id="policy">© 2019 - Privacy Policy - Terms and Conditions</section>
+      </div>
+    </div>
+
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script-->
+  </body>
+</html>
